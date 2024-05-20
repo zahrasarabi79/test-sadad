@@ -1,45 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tab Template</title>
-    <link rel="stylesheet" href="index.css">
-
-</head>
-<body>
-
-<div class="tab">
-    <button class="sub-tab-link" onclick="openTab(event, 'Tab1')"">مدیریت دسترسی</button>
-    <button class="sub-tab-link" onclick="openTab(event, 'Tab2')">خدمات اینترنتی</button>
-    <button class="sub-tab-link" onclick="openTab(event, 'Tab3')">پنجره واحد</button>
-    <button class="sub-tab-link" onclick="openTab(event, 'Tab4')">تبادل اطلاعات بانکی</button>
-    <button class="sub-tab-link" onclick="openTab(event, 'Tab5')">تنظیمات</button>
-
-</div>
-
-<div id="Tab1" class="tabcontent">
-    <div class="vertical-tabs">
-        <button class="sub-tab-link" onclick="openSubTab(event, 'system-info')">اطلاعات سامانه</button>
-        <button class="sub-tab-link" onclick="openSubTab(event, 'role')">نقش</button>
-        <button class="sub-tab-link" onclick="openSubTab(event, 'personnel')">جامعه پرسنل</button>
-        <button class="sub-tab-link" onclick="openSubTab(event, 'role-rules')">قوانین اختصاص نقش</button>
-        <button class="sub-tab-link" onclick="openSubTab(event, 'personnel-access')">دسترسی پرسنل</button>
-        <button class="sub-tab-link" onclick="openSubTab(event, 'access-history')">تاریخچه دسترسی پرسنل</button>
-        <button class="sub-tab-link" onclick="openSubTab(event, 'organizational-chart')">چارت سازمانی</button>
+<html>
+  <lang lang="en" dir="rtl">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Tab Template</title>
+      <link rel="stylesheet" href="index.css" />
+    </head>
+  </lang>
+  <body>
+    <div class="tab">
+      <button class="tab-link" id="tab-link1" onclick="openTab(1)">مدیریت دسترسی</button>
+      <button class="tab-link" id="tab-link2" onclick="openTab(2)">خدمات اینترنتی</button>
+      <button class="tab-link" id="tab-link3" onclick="openTab(3)">پنجره واحد</button>
+      <button class="tab-link" id="tab-link4" onclick="openTab(4)">تبادل اطلاعات بانکی</button>
+      <button class="tab-link" id="tab-link5" onclick="openTab(5)">تنظیمات</button>
     </div>
-</div>
+    <div id="tab-contents"></div>
 
-<div id="Tab2" class="tabcontent">
-    <h3>Tab 2 Content</h3>
-    <p>This is the content of Tab 2.</p>
-</div>
+    <template id="tab-template">
+      <div id="tab1" class="tab-content">
+        <div class="tab-content-list">
+          <button class="tab-content-link" onclick="openSubTab(event, 'system-info')">اطلاعات سامانه</button>
+          <button class="tab-content-link" onclick="openSubTab(event, 'role')">نقش</button>
+          <button class="tab-content-link" onclick="openSubTab(event, 'personnel')">جامعه پرسنل</button>
+          <button class="tab-content-link" onclick="openSubTab(event, 'role-rules')">قوانین اختصاص نقش</button>
+          <button class="tab-content-link" onclick="openSubTab(event, 'personnel-access')">دسترسی پرسنل</button>
+          <button class="tab-content-link" onclick="openSubTab(event, 'access-history')">تاریخچه دسترسی پرسنل</button>
+          <button class="tab-content-link" onclick="openSubTab(event, 'organizational-chart')">چارت سازمانی</button>
+        </div>
+      </div>
+      <div id="tab2" class="tab-content">
+        <h3>Tab 2 Content</h3>
+        <p>This is the content of Tab 2.</p>
+      </div>
+      <div id="tab3" class="tab-content">
+        <h3>Tab 3 Content</h3>
+        <p>This is the content of Tab 3.</p>
+      </div>
+      <div id="tab4" class="tab-content">
+        <h4>Tab 4 Content</h4>
+        <p>This is the content of Tab 4.</p>
+      </div>
+      <div id="tab5" class="tab-content">
+        <h3>Tab 5 Content</h3>
+        <p>This is the content of Tab 5.</p>
+      </div>
+    </template>
 
-<div id="Tab3" class="tabcontent">
-    <h3>Tab 3 Content</h3>
-    <p>This is the content of Tab 3.</p>
-</div>
-
-<script src="index.js"></script>
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>

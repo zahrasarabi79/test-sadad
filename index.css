@@ -1,64 +1,71 @@
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  border-top: none;
-}
-
-/* Style the buttons that are used to open the tab content */
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
 }
 
-/* Style the tab buttons */
-.tab button {
+.tab-link {
   background-color: inherit;
-  float: left;
+  float: right;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 8px 16px;
   transition: 0.3s;
+  border-bottom: 1px solid #ccc;
+  color: #3178c6;
 }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
+.tab-link:hover {
+  background-color: #b0d4f1;
 }
 
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-  border-bottom: 2px solid #3178c6;
+.tab-link.active {
+  border-bottom: 1px solid white;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  color: black;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
 }
-.sub-tab-link.active {
-    background-color: #b0d4f1;
+
+.tab-content {
+  display: none;
+  border-top: none;
+  padding-right: 16px;
+  padding-top: 8px;
+  direction: rtl;
 }
-.vertical-tabs {
+.tab-content.active {
+  display: block;
+}
+.tab-content-list {
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #ccc;
   width: 200px;
+  border-radius: 8px;
 }
-
-.sub-tab-link {
+.tab-content-link {
   padding: 10px;
-  background-color: #f9f9f9;
+  background-color: white;
   border: 1px solid #ccc;
+  border-bottom: none;
   cursor: pointer;
   text-align: right;
 }
 
-.sub-tab-link.active {
+.tab-content-link:last-child {
+  border-bottom: 1px solid #ccc;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.tab-content-link:first-child {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.tab-content-link.active {
   background-color: #b0d4f1;
 }
-
-.sub-tab-content {
-  display: none;
-  padding: 20px;
-}
-
-.sub-tab-content.active {
-  display: block;
+.tab-content-link:hover {
+  background-color: #b0d4f1;
 }

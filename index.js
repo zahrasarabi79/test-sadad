@@ -1,29 +1,21 @@
-// Get all elements with class="tabcontent" and hide them
-let tabcontent = document.getElementsByClassName('tabcontent');
-for (let i = 0; i < tabcontent.length; i++) {
-  tabcontent[i].style.display = 'none';
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const tabContentsContainer = document.getElementById('tab-contents');
+  const template = document.getElementById('tab-template').content.cloneNode(true);
 
-// Get all elements with class="tablinks" and remove the class "active"
-let tablinks = document.getElementsByClassName('tablinks');
-for (let i = 0; i < tablinks.length; i++) {
-  tablinks[i].className = tablinks[i].className.replace('active', '');
-}
+  // Append the cloned content from the template to the tab contents container
+  tabContentsContainer.appendChild(template);
+});
 
-// Show the current tab, and add an "active" class to the button that opened the tab
-const openTab = (event, tabName) => {
-  // Hide all tab content
-  for (let i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = 'none';
-  }
-  // Remove the "active" class from all tablinks
-  for (let i = 0; i < tablinks.length; i++) {
-    tablinks[i].classList.remove('active');
-  }
-  // Show the specific tab content
-  document.getElementById(tabName).style.display = 'block';
-  // Add the "active" class to the button that opened the tab
-  if (!event.currentTarget.classList.contains('active')) {
-    event.currentTarget.classList.add('active');
-  }
-};
+function openTab(tabNumber) {
+  console.log(tabNumber);
+  // remove active class
+  document.querySelectorAll('.tab-content').forEach((content) => {
+    content.classList.remove('active');
+  });
+  document.querySelectorAll('.tab-link').forEach((content) => {
+    content.classList.remove('active');
+  });
+  // add active class
+  document.getElementById(`tab${tabNumber}`).classList.add('active');
+  document.getElementById(`tab-link${tabNumber}`).classList.add('active');
+}
